@@ -181,8 +181,8 @@ class itemRepositoryTest {
         int price = 10003;
         String itemSellStat = "SELL";
 
-        booleanBuilder.and(item.itemDetail.like("%" + itemDetail + "%"));
-        booleanBuilder.and(item.price.gt(price));
+        booleanBuilder.and(item.itemDetail.like("%" + itemDetail + "%")); // 포함
+        booleanBuilder.and(item.price.gt(price)); // 초과
 
         if(StringUtils.equals(itemSellStat, ItemSellStatus.SELL)) {
             booleanBuilder.and(item.itemSellStatus.eq(ItemSellStatus.SELL));
